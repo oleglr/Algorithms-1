@@ -19,6 +19,7 @@ def insertion_acs(ls):
 		
 		current = ls[i]
 		pos = i
+		# changes only line below
 		while pos > 0 and  ls[pos-1] < current:
 			# swap elements
 			ls[pos] = ls[pos-1]
