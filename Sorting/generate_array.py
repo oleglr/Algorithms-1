@@ -1,9 +1,6 @@
 from random import randint
 
 def generate_list(num_elements):
-	ls = []
-
-	for _ in range(num_elements):
-		ls.append(randint(0, 10))
+	ls = [randint(1, 20) for i in range(num_elements)]
 
 	return ls

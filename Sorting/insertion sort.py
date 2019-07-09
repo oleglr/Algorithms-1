@@ -1,6 +1,8 @@
 from generate_array import generate_list
 
-
+"""
+O(n^2)
+"""
 def insertion(ls):
 	for i in range(1, len(ls)):
 		
