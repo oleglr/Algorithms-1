@@ -1,7 +1,10 @@
 from generate_array import generate_list
 
 """
-O(n)
+O(n*log(n))
+
+T(n) = aT(n/b) + f(n) 
+a, b >= 1
 """
 
 def merge_sort(A):
