@@ -7,6 +7,7 @@ T(n) = aT(n/b) + f(n)
 a, b >= 1
 """
 
+
 def merge_sort(A):
     print("Splitting ",A)
     if len(A) > 1:
@@ -42,9 +43,8 @@ def merge_sort(A):
 
 
 def main():
-    ls = generate_list(20)
 
-    merge_sort(ls)
+    merge_sort()
 
 if __name__ == "__main__":
     main()
