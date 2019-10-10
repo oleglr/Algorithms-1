@@ -1,15 +1,15 @@
-from generate_array import generate_list
+import random
 
 """
 O(n*log(n))
 
-T(n) = aT(n/b) + f(n) 
+T(n) = aT(n/b) + f(n)
 a, b >= 1
 """
 
 
 def merge_sort(A):
-    print("Splitting ",A)
+    print("Splitting ", A)
     if len(A) > 1:
         mid = len(A) // 2
         lefthalf = A[:mid]
@@ -39,12 +39,13 @@ def merge_sort(A):
             A[k] = righthalf[j]
             j = j + 1
             k = k + 1
-    print("Merging ",A)
+    print("Merging ", A)
 
 
 def main():
+    unsorted = [random.randint(0, 20) for i in range(20)]
 
-    merge_sort()
+    merge_sort(unsorted)
 
 if __name__ == "__main__":
     main()
