@@ -7,6 +7,12 @@ import matplotlib.pyplot as plt
 
 sys.setrecursionlimit(1000)
 
+def solution(a):
+    ax = sorted(a, key=lambda x: x[0])  # Presorting x-wise
+    ay = sorted(a, key=lambda x: x[1])  # Presorting y-wise
+    p1, p2, mi = ClosestPair(ax, ay)  # Recursive D&C function
+    return p1, p2, mi
+
 def d(p1, p2):
     return math.sqrt((p1[0] - p2[0]) ** 2 + (p1[1] - p2[1]) ** 2)
 
@@ -29,18 +35,28 @@ def brute(ax):
 
 
 def ClosestPair(ax, ay):
-    ln_ax = len(ax)  # It's quicker to assign variable
+    ln_ax = len(ax) 
     if ln_ax <= 3:
         return brute(ax)
 
-    q = ax[:ln_ax]
-    r = ax[ln_ax:]
+    mid = ln_ax // 2
+    qx = ax[:mid]
+    rx = ax[mid:]
 
-    qx = sorted(q, key=lambda x: x[0])
-    qy = sorted(q, key=lambda x: x[1])
+    midpoint = ax[mid][0]
+    qy = list()
+    ry = list()
+    for x in ay:
+        if x[0] <= midpoint:
+            qy.append(x)
+        else:
+            ry.append(x)
 
-    rx = sorted(r, key=lambda x: x[0])
-    ry = sorted(r, key=lambda x: x[1])
+    # qx = sorted(q, key=lambda x: x[0])
+    # qy = sorted(q, key=lambda x: x[1])
+
+    # rx = sorted(r, key=lambda x: x[0])
+    # ry = sorted(r, key=lambda x: x[1])
 
     (p1, q1, dist1) = ClosestPair(qx, qy)
     (p2, q2, dist2) = ClosestPair(rx, ry)
@@ -53,24 +69,26 @@ def ClosestPair(ax, ay):
         min_pair = (p2, q2)
 
     # delta = min(d(p1, q1), d(p2, q2))
-    (p3, q3), dist3 = ClosestSplitPair(ax, ay, delta)
+    pq_3, dist3 = ClosestSplitPair(ax, ay, delta, min_pair)
 
     if delta < dist3:
         return min_pair[0], min_pair[1], delta
     else:
-        return p3, q3, dist3
+        return pq_3[0], pq_3[1], dist3
         
 
 
-def ClosestSplitPair(px, py, delta):
-    x_max = max(px, key=lambda x: x[0]) // 2
-    py = [x for x in py if (x[0] >= x_max - delta) and (x[0] <= xmax + delta)]
+def ClosestSplitPair(px, py, delta, min_pair):
+    ln_x = len(px)
+    x_max = px[ln_x // 2][0]
+    # x_max = max(px, key=lambda x: x[0]) // 2
+    sy = [x for x in py if x_max - delta <= x[0] <= x_max + delta]
     best = delta
-    best_pair = None
+    best_pair = min_pair
 
     for i in range(len(sy) - 1):
-        for j in range(min(7, len(sy) - i)):
-            p, q = py[i], py[i+j]
+        for j in range(i+1, min(7+i, len(sy))):
+            p, q = sy[i], sy[j]
             if d(p, q) < best:
                 best_pair = (p, q)
                 best = d(p, q)
@@ -80,12 +98,15 @@ if __name__ == "__main__":
     points = [(random.randint(0, 5), random.randint(5, 10)) for _ in range(6)]
     print(points)
     
-    split = len(points) // 2
-    L = points[:split]
-    R = points[split:]
+    # split = len(points) // 2
+    # L = points[:split]
+    # R = points[split:]
 
-    p1, p2, delta = ClosestPair(L, R)
+    # p1, p2, delta = ClosestPair(L, R)
+    p1, p2, delta = solution(points)
     print(p1, p2, delta)
+
+    
 
     # plot
     xs = [x[0] for x in points]
