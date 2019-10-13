@@ -74,7 +74,6 @@ def ClosestPair(ax, ay):
 def ClosestSplitPair(px, py, delta, min_pair):
     ln_x = len(px)
     x_max = px[ln_x // 2][0]
-    # x_max = max(px, key=lambda x: x[0]) // 2
     sy = [x for x in py if x_max - delta <= x[0] <= x_max + delta]
     best = delta
     best_pair = min_pair
