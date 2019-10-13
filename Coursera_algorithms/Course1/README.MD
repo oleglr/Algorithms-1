@@ -1,2 +1,2 @@
 ### Master method
-![Master method](img/master_method.png)
+![Master method](img/masted_method.png)
