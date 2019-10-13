@@ -52,12 +52,6 @@ def ClosestPair(ax, ay):
         else:
             ry.append(x)
 
-    # qx = sorted(q, key=lambda x: x[0])
-    # qy = sorted(q, key=lambda x: x[1])
-
-    # rx = sorted(r, key=lambda x: x[0])
-    # ry = sorted(r, key=lambda x: x[1])
-
     (p1, q1, dist1) = ClosestPair(qx, qy)
     (p2, q2, dist2) = ClosestPair(rx, ry)
 
@@ -68,13 +62,12 @@ def ClosestPair(ax, ay):
         delta = dist2
         min_pair = (p2, q2)
 
-    # delta = min(d(p1, q1), d(p2, q2))
-    pq_3, dist3 = ClosestSplitPair(ax, ay, delta, min_pair)
+    (p3, q3), dist3 = ClosestSplitPair(ax, ay, delta, min_pair)
 
     if delta < dist3:
         return min_pair[0], min_pair[1], delta
     else:
-        return pq_3[0], pq_3[1], dist3
+        return p3, q3, dist3
         
 
 
@@ -95,18 +88,11 @@ def ClosestSplitPair(px, py, delta, min_pair):
     return best_pair, best
 
 if __name__ == "__main__":
-    points = [(random.randint(0, 5), random.randint(5, 10)) for _ in range(6)]
+    points = [(round(random.random()*10, 3), round(random.random()*15, 3) )for _ in range(6)]
     print(points)
-    
-    # split = len(points) // 2
-    # L = points[:split]
-    # R = points[split:]
 
-    # p1, p2, delta = ClosestPair(L, R)
     p1, p2, delta = solution(points)
-    print(p1, p2, delta)
-
-    
+    print('\nClosest ', p1, p2, delta)
 
     # plot
     xs = [x[0] for x in points]
