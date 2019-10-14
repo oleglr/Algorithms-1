@@ -8,6 +8,10 @@
 <br/><br/>
 <br/>_Recursive calls_<br/>
 <img src="img/work_at_single_tree.png" alt="Single tree" width="700"/>
-<img src="img/total_work.png" alt="Single tree" width="700"/>
+<img src="img/total_work.png" alt="Single tree" width="700" />
 
+<br/>How to understand _a_ and _b^d_<br/>
+<img src="img/understanding.png" alt="" width="700"/>
 
+<br/>Case 3<br/>
+<img src="img/case_3.png" alt="" width="700"/>
