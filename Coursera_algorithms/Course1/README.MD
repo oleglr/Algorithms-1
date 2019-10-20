@@ -15,3 +15,11 @@
 
 <br/>Case 3<br/>
 <img src="img/case_3.png" alt="" width="700"/>
+
+<br/><br/>
+<br/><br/>
+
+## Week 3
+#### Quick Sort
+
+<img src="img/quicksort.png" alt="" width="700"/>
