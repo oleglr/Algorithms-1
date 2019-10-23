@@ -23,3 +23,13 @@
 #### Quick Sort
 
 <img src="img/quicksort.png" alt="" width="700"/>
+
+## Week 4
+#### Randomized selection
+
+<img src="img/randomized_selection.png" alt="" width="700"/>
+
+
+#### Graphs
+
+<img src="img/graphs.png" alt="" width="700"/>
