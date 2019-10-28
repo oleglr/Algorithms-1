@@ -1,3 +1,9 @@
+
+## to do:
+- implement randomized selection
+- check quick sort
+- understand part about randomized search(quick sort)
+
 ## Week 2
 
 > Master method
@@ -33,3 +39,7 @@
 #### Graphs
 
 <img src="img/graphs.png" alt="" width="700"/>
+
+#### Random Contraction algorithm
+
+<img src="img/random_contraction.png" alt="" width="700"/>
