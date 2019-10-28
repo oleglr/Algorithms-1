@@ -13,3 +13,10 @@ _Overview graph search_
 
 ##### Code
 <img src="img/bfs.png" alt="Graph search" width="700"/>
+
+
+##### Shortest path
+<img src="img/shortest_path_bfs.png"  alt="Graph search" width="700"/>
+
+##### Undirected connectivity
+<img src="img/undirected_connectivity.png"  alt="Graph search" width="700"/>
