@@ -1,5 +1,7 @@
 ### Graphs
 
+###### to do: implement Connected components
+
 ##### Week 1
 
 _Overview graph search_
