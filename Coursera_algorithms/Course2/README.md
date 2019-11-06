@@ -1,6 +1,8 @@
 ### Graphs
 
-###### to do: implement Connected components
+###### to do: implement Connected components(bfs)
+###### to do: implement Strong components components(bfs)
+
 
 ##### Week 1
 
